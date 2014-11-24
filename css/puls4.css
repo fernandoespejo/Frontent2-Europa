@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'iconos';
+  src: url("../fonts/icomoon.eot?1k4ywo");
+  src: url("../fonts/icomoon.eot?#iefix1k4ywo") format('embedded-opentype'), url("../fonts/icomoon.woff?1k4ywo") format('woff'), url("../fonts/icomoon.ttf?1k4ywo") format('truetype'), url("../fonts/icomoon.svg?1k4ywo#icomoon") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 a {
   color: #dd4f20;
 }
@@ -6,6 +13,24 @@ body {
   color: #444;
   font-family: Arial;
   font-size: 16px;
+}
+footer {
+  background: #dd4f20;
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  width: 100%;
+  padding: 1em 0;
+}
+footer h3 {
+  font-size: 14px;
+  font-weight: normal;
+}
+footer h3 strong {
+  display: block;
+}
+footer h3 .mejor:before,
+footer h3 .mejor:after {
+  content: "-";
 }
 header {
   background: #444;
@@ -44,6 +69,12 @@ header .titular .publicar {
   text-shadow: 1px 1px 0px #000;
   float: right;
 }
+header .titular .publicar:before {
+  display: inline-block;
+  margin: 0 3px 0 0;
+  font-family: "iconos";
+  content: "\e600";
+}
 header .titular .titulo {
   font-size: 18px;
   font-weight: normal;
@@ -56,7 +87,7 @@ header .titular .titulo {
   right: 10px;
 }
 .usuario .avatar {
-  margin: 0 1em 0 0;
+  margin: 0 1.1em 0 0;
   position: relative;
   z-index: 2;
 }
@@ -68,12 +99,18 @@ header .titular .titulo {
   background: #dd4f20;
   color: #fff;
   display: block;
-  padding: 3px;
+  padding: 2px;
   position: absolute;
   top: 15px;
   right: 0;
   text-align: right;
   width: 50%;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 #000;
+}
+.usuario .flechita:after {
+  font-family: iconos;
+  content: "\e602";
 }
 nav {
   background: #22bce0;
@@ -116,6 +153,7 @@ nav .menu li a:hover {
   padding: 0.5em;
 }
 .posts .post {
+  margin-bottom: 1em;
   background: #fff;
   color: #7a7a7a;
   box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
@@ -124,6 +162,71 @@ nav .menu li a:hover {
 .posts .post .acciones {
   border-top: 3px solid #22bce0;
   padding: 0.5em;
+  overflow: hidden;
+}
+.posts .post .acciones .datos {
+  float: right;
+}
+.posts .post .acciones .datos .comentarios {
+  background: #444;
+  color: #fff;
+  margin: 0 1em 0 0;
+  padding: 2px 5px;
+  text-decoration: none;
+  border-radius: 3px;
+  position: relative;
+}
+.posts .post .acciones .datos .comentarios:after {
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 7px solid #444;
+  content: "";
+  position: absolute;
+  top: 13px;
+  right: 5px;
+}
+.posts .post .acciones .datos .comentarios:hover {
+  background: #ccc;
+}
+.posts .post .acciones .datos .comentarios:hover:after {
+  border-right: 7px solid #ccc;
+  content: "";
+}
+.posts .post .acciones .datos .estrellita {
+  text-decoration: none;
+  color: #fa0;
+}
+.posts .post .acciones .datos .estrellita:after {
+  font-family: "iconos";
+  content: "\e601";
+}
+.posts .post .acciones .datos .estrellita:hover {
+  color: #d90;
+}
+.posts .post .acciones .votos {
+  float: left;
+}
+.posts .post .acciones .votos .down,
+.posts .post .acciones .votos .up {
+  text-decoration: none;
+}
+.posts .post .acciones .votos .down {
+  color: #f00;
+}
+.posts .post .acciones .votos .down:before {
+  font-family: "iconos";
+  content: "\e602";
+  font-size: 1.5em;
+  vertical-align: bottom;
+}
+.posts .post .acciones .votos .up {
+  color: #008000;
+}
+.posts .post .acciones .votos .up:before {
+  font-family: "iconos";
+  content: "\e603";
+  font-size: 1.5em;
+  vertical-align: bottom;
 }
 .posts .post .descripcion {
   color: #7a7a7a;
@@ -161,4 +264,24 @@ nav .menu li a:hover {
   vertical-align: top;
   height: 160px;
   width: 120px;
+}
+@media screen and (min-width: 768px) {
+  header .titular .publicar {
+    position: relative;
+    padding-left: 3em;
+  }
+  header .titular .publicar:before {
+    position: absolute;
+    left: 0;
+    top: -10px;
+    font-size: 2.5em;
+  }
+  .posts .post {
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+  }
+  .posts .post:nth-child(odd) {
+    margin-right: 3.3%;
+  }
 }
